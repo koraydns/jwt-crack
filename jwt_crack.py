@@ -1,3 +1,7 @@
+# jwt_crack.py
+# Crack JWT using brute-force via a wordlist.
+# GitHub: https://github.com/koraydns/jwt-crack
+
 import sys,jwt
 
 """

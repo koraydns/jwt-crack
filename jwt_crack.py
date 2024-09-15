@@ -17,7 +17,7 @@ def is_jwt(token):
 	try:
 		typ = jwt.get_unverified_header(token).get('typ').lower()
 		alg = jwt.get_unverified_header(token).get('alg').lower()
-		if typ == "jwt" and alg == "hs256":
+		if typ == "jwt" and (alg == "hs256" or alg == "hs512"):
 			return True
 		else:
 			return False
@@ -36,7 +36,7 @@ def crack_jwt(token, secrets_list):
 	secrets = list_of_secrets.readlines()
 	for secret in secrets:
 		try:
-			data = jwt.decode(token, secret.strip(), algorithms="HS256")
+			data = jwt.decode(token, secret.strip(), algorithms=["HS256", "HS512"])
 			print("\n")
 			print("HEADER")
 			print("-----------")

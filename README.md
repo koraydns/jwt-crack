@@ -4,7 +4,7 @@ This script is developed for educational and ethical purposes only. It is illega
 
 # Info
 
-HS256 JWT token secret key brute force cracker.
+HS256-512 JWT token secret key brute force cracker.
 
 # Usage
 

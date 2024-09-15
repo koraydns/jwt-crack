@@ -5,7 +5,7 @@
 import sys,jwt
 
 """
-Check if the given data is HS256 JWT
+Check if the given data is HS256 or HS512 JWT
 """
 def is_jwt(token):
 	try:
@@ -63,5 +63,5 @@ token = sys.argv[2]
 if is_jwt(token):
 	crack_jwt(token, secrets_list)
 else:
-	print("Please enter valid JWT with HS256 algorithm")
+	print("Please enter valid JWT with HS256 or HS512 algorithm")
 	sys.exit()
